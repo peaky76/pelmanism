@@ -84,6 +84,8 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
   const grid = document.querySelector(".grid");
+  var cardsChosen = [];
+  var cardsChosenId = [];
 
   function createBoard() {
     for (let i = 0; i < cardArray.length; i++) {
@@ -93,6 +95,13 @@ document.addEventListener("DOMContentLoaded", () => {
       // card.addEventListener('click', flipcard)
       grid.appendChild(card);
     }
+  }
+
+  //check for matches
+
+  function flipCard() {
+    var cardId = this.getAttribute("data-id");
+    cardsChosen.push(cardArray[cardId].name);
   }
 
   createBoard();
