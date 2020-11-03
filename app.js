@@ -87,6 +87,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const grid = document.querySelector(".grid");
   const resultDisplay = document.querySelector("#result");
+
+  var cardImages = [];
+  var guesses = 0;
   var cardsChosenId = [];
   var cardsWonId = [];
 
@@ -98,37 +101,39 @@ document.addEventListener("DOMContentLoaded", () => {
       card.addEventListener("click", selectCard);
       grid.appendChild(card);
     }
+    guesses = 0;
+    cardImages = document.querySelectorAll("img");
   }
 
   function evaluateCards() {
-    var cardImages = document.querySelectorAll("img");
     const cardOneId = cardsChosenId[0];
     const cardTwoId = cardsChosenId[1];
+    guesses += 1;
     if (isMatch(cardOneId, cardTwoId)) {
-      removeCard(cardImages[cardOneId]);
-      removeCard(cardImages[cardTwoId]);
-      cardsWonId.push(cardsChosenId);
+      removeCard(cardOneId);
+      removeCard(cardTwoId);
     } else {
-      hideCard(cardImages[cardOneId]);
-      hideCard(cardImages[cardTwoId]);
+      hideCard(cardOneId);
+      hideCard(cardTwoId);
     }
     cardsChosenId = [];
-    resultDisplay.textContent = cardsWonId.length;
-    if (cardsWonId.length == cardDeck.length / 2) {
+    resultDisplay.textContent = guesses;
+    if (cardsWonId.length == cardDeck.length) {
       resultDisplay.textContent = "Congratulations! You matched them all!";
     }
   }
 
-  function hideCard(card) {
-    card.setAttribute("src", "images/png/card_back.png");
+  function hideCard(cardId) {
+    cardImages[cardId].setAttribute("src", "images/png/card_back.png");
   }
 
   function isMatch(cardOneId, cardTwoId) {
     return cardOneId != cardTwoId && cardDeck[cardOneId].img == cardDeck[cardTwoId].img;
   }
 
-  function removeCard(card) {
-    card.setAttribute("src", "images/png/blank.png");
+  function removeCard(cardId) {
+    cardsWonId.push(cardId);
+    cardImages[cardId].setAttribute("src", "images/png/blank.png");
   }
 
   function selectCard() {
