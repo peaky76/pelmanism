@@ -106,7 +106,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const optionOneId = cardsChosenId[0];
     const optionTwoId = cardsChosenId[1];
     if (cardsChosen[0] === cardsChosen[1]) {
-      alert("You found a match");
       cards[optionOneId].setAttribute("src", "images/png/blank.png");
       cards[optionTwoId].setAttribute("src", "images/png/blank.png");
       cardsWon.push(cardsChosen);
@@ -128,7 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
     cardsChosenId.push(cardId);
     this.setAttribute("src", cardArray[cardId].img);
     if (cardsChosen.length === 2) {
-      setTimeout(checkForMatch, 500);
+      setTimeout(checkForMatch, 1000);
     }
   }
 
