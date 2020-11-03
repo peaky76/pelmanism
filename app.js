@@ -103,15 +103,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function checkForMatch() {
     var cards = document.querySelectorAll("img");
-    const optionOneId = cardsChosenId[0];
-    const optionTwoId = cardsChosenId[1];
+    const cardOne = cards[cardsChosenId[0]];
+    const cardTwo = cards[cardsChosenId[1]];
     if (cardsChosen[0] === cardsChosen[1]) {
-      cards[optionOneId].setAttribute("src", "images/png/blank.png");
-      cards[optionTwoId].setAttribute("src", "images/png/blank.png");
+      removeCard(cardOne);
+      removeCard(cardTwo);
       cardsWon.push(cardsChosen);
     } else {
-      cards[optionOneId].setAttribute("src", "images/png/card_back.png");
-      cards[optionTwoId].setAttribute("src", "images/png/card_back.png");
+      hideCard(cardOne);
+      hideCard(cardTwo);
     }
     cardsChosen = [];
     cardsChosenId = [];
@@ -131,5 +131,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  function hideCard(card) {
+    card.setAttribute("src", "images/png/card_back.png");
+  }
+
+  function removeCard(card) {
+    card.setAttribute("src", "images/png/blank.png");
+  }
   createBoard();
 });
