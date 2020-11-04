@@ -3,83 +3,83 @@ document.addEventListener("DOMContentLoaded", () => {
   const fruitCards = [
     {
       name: "apple",
-      img: "images/png/apple.png",
+      img: "images/fruit/png/apple.png",
     },
     {
       name: "apple",
-      img: "images/png/apple.png",
-    },
-    {
-      name: "banana",
-      img: "images/png/banana.png",
-    },
-    {
-      name: "banana",
-      img: "images/png/banana.png",
-    },
-    {
-      name: "cherries",
-      img: "images/png/cherries.png",
-    },
-    {
-      name: "cherries",
-      img: "images/png/cherries.png",
-    },
-    {
-      name: "grapes",
-      img: "images/png/grapes.png",
-    },
-    {
-      name: "grapes",
-      img: "images/png/grapes.png",
-    },
-    {
-      name: "lemon",
-      img: "images/png/lemon.png",
-    },
-    {
-      name: "lemon",
-      img: "images/png/lemon.png",
+      img: "images/fruit/png/apple.png",
     },
     {
       name: "orange",
-      img: "images/png/orange.png",
+      img: "images/fruit/png/orange.png",
     },
     {
       name: "orange",
-      img: "images/png/orange.png",
+      img: "images/fruit/png/orange.png",
     },
     {
-      name: "pear",
-      img: "images/png/pear.png",
+      name: "lemon",
+      img: "images/fruit/png/lemon.png",
     },
     {
-      name: "pear",
-      img: "images/png/pear.png",
-    },
-    {
-      name: "pineapple",
-      img: "images/png/pineapple.png",
-    },
-    {
-      name: "pineapple",
-      img: "images/png/pineapple.png",
-    },
-    {
-      name: "raspberry",
-      img: "images/png/raspberry.png",
-    },
-    {
-      name: "raspberry",
-      img: "images/png/raspberry.png",
+      name: "lemon",
+      img: "images/fruit/png/lemon.png",
     },
     {
       name: "strawberry",
-      img: "images/png/strawberry.png",
+      img: "images/fruit/png/strawberry.png",
     },
     {
       name: "strawberry",
-      img: "images/png/strawberry.png",
+      img: "images/fruit/png/strawberry.png",
+    },
+    {
+      name: "banana",
+      img: "images/fruit/png/banana.png",
+    },
+    {
+      name: "banana",
+      img: "images/fruit/png/banana.png",
+    },
+    {
+      name: "cherries",
+      img: "images/fruit/png/cherries.png",
+    },
+    {
+      name: "cherries",
+      img: "images/fruit/png/cherries.png",
+    },
+    {
+      name: "grapes",
+      img: "images/fruit/png/grapes.png",
+    },
+    {
+      name: "grapes",
+      img: "images/fruit/png/grapes.png",
+    },
+    {
+      name: "raspberry",
+      img: "images/fruit/png/raspberry.png",
+    },
+    {
+      name: "raspberry",
+      img: "images/fruit/png/raspberry.png",
+    },
+    {
+      name: "pear",
+      img: "images/fruit/png/pear.png",
+    },
+    {
+      name: "pear",
+      img: "images/fruit/png/pear.png",
+    },
+    {
+      name: "pineapple",
+      img: "images/fruit/png/pineapple.png",
+    },
+    {
+      name: "pineapple",
+      img: "images/fruit/png/pineapple.png",
     },
   ];
 
@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function createBoard() {
     for (let i = 0; i < cardDeck.length; i++) {
       var card = document.createElement("img");
-      card.setAttribute("src", "images/png/card_back.png");
+      card.setAttribute("src", "images/card_back.png");
       card.setAttribute("data-id", i);
       card.addEventListener("click", selectCard);
       grid.appendChild(card);
@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function hideCard(cardId) {
-    cardImages[cardId].setAttribute("src", "images/png/card_back.png");
+    cardImages[cardId].setAttribute("src", "images/card_back.png");
   }
 
   function isMatch(cardOneId, cardTwoId) {
@@ -136,7 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function removeCard(cardId) {
     cardsWonId.push(cardId);
-    cardImages[cardId].setAttribute("src", "images/png/blank.png");
+    cardImages[cardId].setAttribute("src", "images/blank.png");
   }
 
   function selectCard() {
