@@ -1,21 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
   //card options
-  const cardDeck = [
+  const fruitCards = [
     {
       name: "apple",
       img: "images/png/apple.png",
     },
     {
-      name: "orange",
-      img: "images/png/orange.png",
+      name: "apple",
+      img: "images/png/apple.png",
     },
     {
-      name: "pear",
-      img: "images/png/pear.png",
-    },
-    {
-      name: "grapes",
-      img: "images/png/grapes.png",
+      name: "banana",
+      img: "images/png/banana.png",
     },
     {
       name: "banana",
@@ -26,24 +22,28 @@ document.addEventListener("DOMContentLoaded", () => {
       img: "images/png/cherries.png",
     },
     {
-      name: "raspberry",
-      img: "images/png/raspberry.png",
+      name: "cherries",
+      img: "images/png/cherries.png",
     },
     {
-      name: "pineapple",
-      img: "images/png/pineapple.png",
+      name: "grapes",
+      img: "images/png/grapes.png",
     },
     {
-      name: "strawberry",
-      img: "images/png/strawberry.png",
+      name: "grapes",
+      img: "images/png/grapes.png",
     },
     {
       name: "lemon",
       img: "images/png/lemon.png",
     },
     {
-      name: "apple",
-      img: "images/png/apple.png",
+      name: "lemon",
+      img: "images/png/lemon.png",
+    },
+    {
+      name: "orange",
+      img: "images/png/orange.png",
     },
     {
       name: "orange",
@@ -54,34 +54,37 @@ document.addEventListener("DOMContentLoaded", () => {
       img: "images/png/pear.png",
     },
     {
-      name: "grapes",
-      img: "images/png/grapes.png",
-    },
-    {
-      name: "banana",
-      img: "images/png/banana.png",
-    },
-    {
-      name: "cherries",
-      img: "images/png/cherries.png",
-    },
-    {
-      name: "raspberry",
-      img: "images/png/raspberry.png",
+      name: "pear",
+      img: "images/png/pear.png",
     },
     {
       name: "pineapple",
       img: "images/png/pineapple.png",
     },
     {
+      name: "pineapple",
+      img: "images/png/pineapple.png",
+    },
+    {
+      name: "raspberry",
+      img: "images/png/raspberry.png",
+    },
+    {
+      name: "raspberry",
+      img: "images/png/raspberry.png",
+    },
+    {
       name: "strawberry",
       img: "images/png/strawberry.png",
     },
     {
-      name: "lemon",
-      img: "images/png/lemon.png",
+      name: "strawberry",
+      img: "images/png/strawberry.png",
     },
   ];
+
+  deckSize = 16;
+  cardDeck = fruitCards.slice(0, deckSize);
 
   cardDeck.sort(() => 0.5 - Math.random());
 
