@@ -81,14 +81,135 @@ document.addEventListener("DOMContentLoaded", () => {
       name: "pineapple",
       img: "images/fruit/png/pineapple.png",
     },
+    {
+      name: "blueberries",
+      img: "images/fruit/png/blueberries.png",
+    },
+    {
+      name: "blueberries",
+      img: "images/fruit/png/blueberries.png",
+    },
+    {
+      name: "watermelon",
+      img: "images/fruit/png/watermelon.png",
+    },
+    {
+      name: "watermelon",
+      img: "images/fruit/png/watermelon.png",
+    },
   ];
 
-  deckSize = 16;
-  cardDeck = fruitCards.slice(0, deckSize);
+  const animalCards = [
+    {
+      name: "cat",
+      img: "images/animals/png/cat.png",
+    },
+    {
+      name: "cat",
+      img: "images/animals/png/cat.png",
+    },
+    {
+      name: "dog",
+      img: "images/animals/png/dog.png",
+    },
+    {
+      name: "dog",
+      img: "images/animals/png/dog.png",
+    },
+    {
+      name: "rabbit",
+      img: "images/animals/png/rabbit.png",
+    },
+    {
+      name: "rabbit",
+      img: "images/animals/png/rabbit.png",
+    },
+    {
+      name: "fish",
+      img: "images/animals/png/fish.png",
+    },
+    {
+      name: "fish",
+      img: "images/animals/png/fish.png",
+    },
+    {
+      name: "pig",
+      img: "images/animals/png/pig.png",
+    },
+    {
+      name: "pig",
+      img: "images/animals/png/pig.png",
+    },
+    {
+      name: "sheep",
+      img: "images/animals/png/sheep.png",
+    },
+    {
+      name: "sheep",
+      img: "images/animals/png/sheep.png",
+    },
+    {
+      name: "turtle",
+      img: "images/animals/png/turtle.png",
+    },
+    {
+      name: "turtle",
+      img: "images/animals/png/turtle.png",
+    },
+    {
+      name: "hen",
+      img: "images/animals/png/hen.png",
+    },
+    {
+      name: "hen",
+      img: "images/animals/png/hen.png",
+    },
+    {
+      name: "duck",
+      img: "images/animals/png/duck.png",
+    },
+    {
+      name: "duck",
+      img: "images/animals/png/duck.png",
+    },
+    {
+      name: "squirrel",
+      img: "images/animals/png/squirrel.png",
+    },
+    {
+      name: "squirrel",
+      img: "images/animals/png/squirrel.png",
+    },
+    {
+      name: "bee",
+      img: "images/animals/png/bee.png",
+    },
+    {
+      name: "bee",
+      img: "images/animals/png/bee.png",
+    },
+    {
+      name: "chameleon",
+      img: "images/animals/png/chameleon.png",
+    },
+    {
+      name: "chameleon",
+      img: "images/animals/png/watermelon.png",
+    },
+  ];
 
+  // Create deck
+  // Small = 16, Medium = 20, Large = 24
+  deckSize = 24;
+  cardDeck = animalCards.slice(0, deckSize);
   cardDeck.sort(() => 0.5 - Math.random());
 
+  // Create play area
   const grid = document.querySelector(".grid");
+  calculatedGridWidth = ((deckSize / 4) * 128 + (deckSize / 4 - 1) * 20).toString() + "px";
+  grid.style.width = calculatedGridWidth;
+  grid.style.height = "572px";
+
   const resultDisplay = document.querySelector("#result");
 
   var cardImages = [];
